@@ -1,0 +1,1 @@
+Blue Pencil does not read, write, or delete files outside its installation and save folders. All “file” interactions are simulated within the game. No personal data is collected or transmitted.
