@@ -5,7 +5,9 @@
       "Bash(python:*)",
       "Bash(rm:*)",
       "Bash(where renpy)",
-      "Bash(\"C:\\Users\\ryanl\\renpy\\renpy-8.4.1-sdk\\renpy.exe\" . --lint)"
+      "Bash(\"C:\\Users\\ryanl\\renpy\\renpy-8.4.1-sdk\\renpy.exe\" . --lint)",
+      "Bash(\"C:\\Users\\ryanl\\renpy\\renpy-8.4.1-sdk\\renpy.exe\" .)",
+      "Bash(\"C:\\Users\\ryanl\\renpy\\renpy-8.4.1-sdk\\renpy.exe\" . compile)"
     ],
     "deny": []
   }

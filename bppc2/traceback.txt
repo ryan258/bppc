@@ -1,19 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 24, in script call
-    call content_note
-  File "game/script.rpy", line 37, in script
-    centered "{size=-4}Press any key to continue{/size}"
-AttributeError: 'Layout' object has no attribute 'yesno_prompt'
+  File "game/script.rpy", line 67, in script call
+    call act1_welcome
+  File "game/script.rpy", line 138, in script call
+    call poetry_session_1
+  File "game/script.rpy", line 213, in script call
+    call after_club_conversations
+  File "game/script.rpy", line 237, in script
+    "Next Tuesday can't come soon enough."
+FileNotFoundError: Couldn't find file 'gui/window_icon.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 24, in script call
-    call content_note
-  File "game/script.rpy", line 37, in script
-    centered "{size=-4}Press any key to continue{/size}"
+  File "game/script.rpy", line 67, in script call
+    call act1_welcome
+  File "game/script.rpy", line 138, in script call
+    call poetry_session_1
+  File "game/script.rpy", line 213, in script call
+    call after_club_conversations
+  File "game/script.rpy", line 237, in script
+    "Next Tuesday can't come soon enough."
   File "renpy/ast.py", line 2915, in execute
     Say.execute(self)
     ~~~~~~~~~~~^^^^^^
@@ -35,40 +43,23 @@ Traceback (most recent call last):
   File "renpy/ui.py", line 304, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2219, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )  # type: ignore
-    ^                
-  File "renpy/display/core.py", line 3137, in interact_core
-    self.quit_event()
-    ~~~~~~~~~~~~~~~^^
-  File "renpy/display/core.py", line 1813, in quit_event
-    renpy.display.behavior.run(renpy.config.quit_action)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/behavior.py", line 411, in run
-    return action(*args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^
-  File "renpy/common/00action_menu.rpy", line 271, in __call__
-    layout.yesno_screen(layout.QUIT, Quit(False))
-    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00layout.rpy", line 517, in yesno_screen
-    elif renpy.invoke_in_new_context(layout.invoke_yesno_prompt, None, message):
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
-  File "renpy/game.py", line 301, in invoke_in_new_context
-    return callable(*args, **kwargs)
-           ~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "renpy/common/00layout.rpy", line 472, in invoke_yesno_prompt
-    rv = layout.yesno_prompt(*args)
-         ^^^^^^^^^^^^^^^^^^^       
-AttributeError: 'Layout' object has no attribute 'yesno_prompt'
+  File "renpy/display/core.py", line 2174, in interact
+    self.start()
+    ~~~~~~~~~~^^
+  File "renpy/display/core.py", line 1019, in start
+    self.post_init()
+    ~~~~~~~~~~~~~~^^
+  File "renpy/display/core.py", line 1102, in post_init
+    self.set_icon()
+    ~~~~~~~~~~~~~^^
+  File "renpy/display/core.py", line 1155, in set_icon
+    with renpy.loader.load(icon, directory="images") as f:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^      
+  File "renpy/loader.py", line 698, in load
+    raise FileNotFoundError("Couldn't find file '%s'." % name)
+FileNotFoundError: Couldn't find file 'gui/window_icon.png'.
 
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.1.25072401
- 
-Thu Aug 14 23:13:14 2025
+Blue Pencil Poetry Club 1.0.0
+Fri Aug 15 13:11:29 2025

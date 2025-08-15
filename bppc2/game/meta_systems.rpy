@@ -49,14 +49,9 @@ label first_hub_intrusion:
 
 # Blue-pencil marginalia system
 label show_marginalia(text=""):
-    # Display editorial marks in margin
-    show blue_pencil at left with dissolve:
-        alpha 0.7
-    
+    # Simplified marginalia for launch - just show hub text
     if text:
         hub "{color=#2B68C5}{size=-4}[text]{/size}{/color}"
-    
-    hide blue_pencil with dissolve
     return
 
 # Basic drift effect

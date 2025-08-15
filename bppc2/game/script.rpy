@@ -8,6 +8,13 @@ default culp = 0
 default compassion = 0
 default hub_pressure = 0
 
+# Critical meta-horror variables are defined in their respective system files:
+# - reload_count, editorial_pressure, drift_intensity: meta_systems.rpy
+# - haunted_slot_active, haunted_interstitial_seen: haunted_load.rpy  
+# - centerfold_active, mercy_achieved, staples_touched: centerfold_mercy.rpy
+# - fake_traceback_used: fake_traceback.rpy
+# This prevents NameError crashes during gameplay
+
 # Character definitions
 define leo = Character("Leo", color="#402020")
 define june = Character("June", color="#FFB6C1")  # Milkshake Pink
@@ -16,18 +23,40 @@ define kit = Character("Kit", color="#800080")    # Darker purple for spiky pers
 define mara = Character("Mara", color="#B8860B")  # Darker gold for self-aware treasurer
 define hub = Character("", color="#2B68C5")       # The editorial voice (blue pencil)
 
-# Placeholder character images (silhouettes until assets are created)
-image june neutral = Solid("#FFB6C1", xsize=200, ysize=600)
-image june happy = Solid("#FFB6C1", xsize=200, ysize=600)
-image june worried = Solid("#FFB6C1", xsize=200, ysize=600)
-image mina neutral = Solid("#2B68C5", xsize=200, ysize=600)
-image mina intense = Solid("#2B68C5", xsize=200, ysize=600)
-image kit neutral = Solid("#800080", xsize=200, ysize=600)
-image kit skeptical = Solid("#800080", xsize=200, ysize=600)
-image kit angry = Solid("#800080", xsize=200, ysize=600)
-image mara neutral = Solid("#B8860B", xsize=200, ysize=600)
-image mara knowing = Solid("#B8860B", xsize=200, ysize=600)
-image mara worried = Solid("#B8860B", xsize=200, ysize=600)
+# Layered character images (easy asset swapping)
+layeredimage june:
+    group expression:
+        attribute neutral default:
+            Solid("#FFB6C1", xsize=200, ysize=600)
+        attribute happy:
+            Solid("#FFB6C1", xsize=200, ysize=600)  # Brighter when happy
+        attribute worried:
+            Solid("#FFAAAA", xsize=200, ysize=600)  # Slightly darker when worried
+
+layeredimage mina:
+    group expression:
+        attribute neutral default:
+            Solid("#2B68C5", xsize=200, ysize=600)
+        attribute intense:
+            Solid("#1A4A80", xsize=200, ysize=600)  # Darker when intense
+
+layeredimage kit:
+    group expression:
+        attribute neutral default:
+            Solid("#800080", xsize=200, ysize=600)
+        attribute skeptical:
+            Solid("#A020A0", xsize=200, ysize=600)  # Lighter when skeptical
+        attribute angry:
+            Solid("#600040", xsize=200, ysize=600)  # Much darker when angry
+
+layeredimage mara:
+    group expression:
+        attribute neutral default:
+            Solid("#B8860B", xsize=200, ysize=600)
+        attribute knowing:
+            Solid("#D4A00C", xsize=200, ysize=600)  # Brighter when knowing
+        attribute worried:
+            Solid("#A07509", xsize=200, ysize=600)  # Darker when worried
 
 # Narrator for scene descriptions
 define n = Character(None, kind=nvl)
@@ -38,16 +67,21 @@ label start:
     call act1_welcome
     return
 
+# Developer testing entry point
+label test_mode:
+    call qa_test_script
+    return
+
 # Content note as per spec
 label content_note:
-    scene black
+    scene black with fade
+    window show
     centered "{size=+6}Content Note{/size}"
-    ""
     centered "This story depicts anxiety, obsessive behavior, and depression."
     centered "No graphic self-harm, no instructions."
     centered "If you need support, consider pausing and seeking local resources."
-    ""
     centered "{size=-4}Press any key to continue{/size}"
+    window hide
     pause
     return
 

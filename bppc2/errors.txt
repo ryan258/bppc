@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/audio_system.rpy", line 117: expected end of line
-    play ambient diner_loop loop volume (ambient_volume * 1.5) pitch 0.8
-                                                               ^
+File "game/screens.rpy", line 79: 'alpha' is not a keyword argument or valid child of the text statement.
+    alpha 0.3
+         ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Fri Aug 15 11:58:10 2025
+Fri Aug 15 12:39:46 2025
