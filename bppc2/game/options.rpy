@@ -7,6 +7,9 @@ default persistent.honest_mode = False
 default persistent.mercy = False
 default persistent.haunted_save = False
 
+# Fix quit prompt issue
+define config.quit_action = Quit(confirm=False)
+
 screen preferences():
     tag menu
     vbox:

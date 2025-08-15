@@ -193,6 +193,64 @@ label after_club_conversations:
     
     # Set up for next session
     "Next Tuesday can't come soon enough."
+    
+    # Transition to Phase 2: Meta Horror Introduction
+    call week_two_transition
+    return
+
+# Week 2: The first meta-horror elements emerge
+label week_two_transition:
+    scene black
+    "One week later..."
+    "You've been thinking about the poetry club constantly."
+    "Something about those conversations felt... significant."
+    "Like you were being watched. Evaluated."
+    
+    scene bg hallway
+    "Walking to your next class, you run into someone new."
+    
+    # The Try Again Trap - signature mechanic introduction
+    call serena_trap_scene
+    
+    # After the trap, return to normal flow
+    "The rest of the week passes normally."
+    "But you can't shake the feeling that something has changed."
+    "Something about the way words feel in your mouth."
+    "The way conversations seem to... matter more than they should."
+    
+    # Check if player has triggered meta-awareness
+    if reload_count >= 2:
+        call early_meta_awareness
+    else:
+        call normal_progression
+    
+    return
+
+label early_meta_awareness:
+    "You've been noticing things."
+    "Small inconsistencies. Moments that feel... edited."
+    "Like someone is standing behind you, pencil in hand."
+    
+    # First blue-pencil marginalia
+    call show_marginalia("Pay attention.")
+    
+    "Was that... a whisper?"
+    "Or just your imagination?"
+    return
+
+label normal_progression:
+    "Tuesday arrives again, and with it, another poetry club meeting."
+    "You're looking forward to seeing everyone."
+    "Especially after that strange encounter with Serena."
+    
+    # Evening mailbag check
+    call evening_mailbag
+    call check_mailbag_behavior
+    
+    "As you close the mailbag, you wonder..."
+    "Who exactly is writing these letters?"
+    "And how do they know so much about what happens in the poetry club?"
+    
     return
 
 label talk_june_history:

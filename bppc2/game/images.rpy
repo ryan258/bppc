@@ -2,6 +2,7 @@
 
 # Placeholder backgrounds - these will be replaced with proper art
 image bg classroom = "#F5F5DC"  # Beige classroom
+image bg hallway = "#E6E6FA"    # Lavender hallway
 image bg black = "#000000"      # Black transition
 
 # Placeholder character sprites - silhouettes for now
@@ -20,6 +21,9 @@ image kit smirk = Solid("#800080", xsize=200, ysize=400)
 image mara knowing = Solid("#B8860B", xsize=200, ysize=400)    # Gold silhouette
 image mara worried = Solid("#B8860B", xsize=200, ysize=400)
 image mara neutral = Solid("#B8860B", xsize=200, ysize=400)
+
+# Serena for Try Again Trap
+image serena neutral = Solid("#CD853F", xsize=200, ysize=400)  # Sandy brown silhouette
 
 # UI elements for later phases
 image blue_pencil = Solid("#2B68C5", xsize=5, ysize=100)      # Editorial marks
