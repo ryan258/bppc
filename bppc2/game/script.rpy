@@ -251,6 +251,60 @@ label normal_progression:
     "Who exactly is writing these letters?"
     "And how do they know so much about what happens in the poetry club?"
     
+    # Phase 3: Advanced Meta Mechanics kick in
+    call phase_three_escalation
+    
+    return
+
+# Phase 3: The meta-horror intensifies
+label phase_three_escalation:
+    # Check for advanced mechanic triggers
+    call escalate_hub_intervention
+    call check_fake_traceback_conditions
+    call apply_drift_effects
+    
+    # Hub becomes more sophisticated
+    if hub_pressure >= 40:
+        call hub_meta_commentary
+        
+        "The blue-pencil marks are appearing more frequently now."
+        "In the margins of your thoughts."
+        "Correcting. Always correcting."
+        
+        if reload_count >= 5:
+            call visual_breakdown_sequence
+            call hub_speak("You see? This is what optimization does to a story.")
+    
+    # Fake traceback deployment
+    if editorial_pressure >= 25 and not fake_traceback_used:
+        "Something feels unstable about the very fabric of the game."
+        call trigger_fake_traceback
+    
+    # Haunted save activation
+    if hub_pressure >= 50:
+        call check_haunted_save_activation
+        
+        if haunted_slot_active:
+            call show_marginalia("Save often. You'll need it.")
+            hub "{color=#2B68C5}Some memories are preserved in amber.{/color}"
+            hub "{color=#2B68C5}Others... drift away.{/color}"
+    
+    # Progressive drift
+    if drift_intensity >= 0.6:
+        "The classroom itself seems less stable now."
+        "Edges blur. Colors bleed."
+        "Like someone is erasing and redrawing everything in real-time."
+        
+        call apply_misregistration
+    
+    # Hub philosophy emerges
+    if hub_pressure >= 60:
+        call hub_philosophy
+    
+    # Return to normal... for now
+    "But for now, the poetry club continues."
+    "Even as the walls of reality grow thin."
+    
     return
 
 label talk_june_history:

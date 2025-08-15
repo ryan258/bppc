@@ -37,8 +37,8 @@ label first_hub_intrusion:
     pause 0.5
     hide blue_pencil with dissolve
     
-    # Hub's first words (gentle, helpful tone)
-    hub "{color=#2B68C5}That was a cute choice. It didn't work.{/color}"
+    # Use advanced Hub voice system
+    call hub_speak("That was a cute choice. It didn't work.")
     
     $ hub_pressure += 5
     $ hub_warnings += 1

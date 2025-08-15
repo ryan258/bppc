@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label start is defined twice, at File "game/options.rpy", line 45:
-label start:
-and File "game/script.rpy", line 35:
-label start:
-
+File "game/fake_traceback.rpy", line 43: expected a keyword argument or child statement.
+    ""
+    ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Thu Aug 14 22:36:50 2025
+Thu Aug 14 23:26:00 2025
