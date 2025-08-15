@@ -1,0 +1,79 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+After initialization, but before game start.
+  File "game/options.rpy", line 26, in prepare_screen
+    screen load():
+  File "game/options.rpy", line 26, in prepare
+    screen load():
+  File "game/options.rpy", line 29, in prepare
+    if persistent.haunted_save and not persistent.honest_mode:
+  File "game/options.rpy", line 34, in prepare
+    else:
+renpy.display.screen.ScreenNotFound: Screen 'file_slots' is not known.
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "renpy/bootstrap.py", line 376, in bootstrap
+    renpy.main.main()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/main.py", line 529, in main
+    renpy.game.script.report_duplicate_labels()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/script.py", line 1222, in report_duplicate_labels
+    if renpy.parser.report_parse_errors():
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^ 
+  File "renpy/parser.py", line 1794, in report_parse_errors
+    renpy.display.error.report_parse_errors(screen_parse_errors, error_fn)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/error.py", line 186, in report_parse_errors
+    renpy.game.invoke_in_new_context(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        call_exception_screen,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        error_fn=error_fn,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/game.py", line 301, in invoke_in_new_context
+    return callable(*args, **kwargs)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "renpy/display/error.py", line 44, in call_exception_screen
+    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 304, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2219, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )  # type: ignore
+    ^                
+  File "renpy/display/core.py", line 2450, in interact_core
+    renpy.display.screen.prepare_screens()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 1035, in prepare_screens
+    s.ast.prepare_screen()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "game/options.rpy", line 26, in prepare_screen
+    screen load():
+  File "game/options.rpy", line 26, in prepare
+    screen load():
+  File "game/options.rpy", line 29, in prepare
+    if persistent.haunted_save and not persistent.honest_mode:
+  File "game/options.rpy", line 34, in prepare
+    else:
+  File "renpy/sl2/slast.py", line 2014, in prepare
+    raise renpy.display.screen.ScreenNotFound(self.target)
+renpy.display.screen.ScreenNotFound: Screen 'file_slots' is not known.
+
+Windows-11-10.0.26100-SP0 AMD64
+Ren'Py 8.4.1.25072401
+ 
+Thu Aug 14 22:36:50 2025
