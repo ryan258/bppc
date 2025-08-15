@@ -1,0 +1,23 @@
+{
+  // If you have a Ren'Py extension installed, "renpy" will be used.
+  // If not, VS Code will still treat it as non-Python and silence Pylance.
+  "files.associations": {
+    "*.rpy": "renpy"
+  },
+
+  // Keep Pylance away from Ren'Py scripts
+  "python.analysis.exclude": [
+    "**/*.rpy"
+  ],
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportSyntaxError": "none",
+    "reportUndefinedVariable": "none",
+    "reportGeneralTypeIssues": "none"
+  },
+  "files.exclude": {
+    "**/*.rpyc": true,
+    "**/*.rpa": true,
+    "**/*.rpymc": true,
+    "**/cache/": true
+  }
+}

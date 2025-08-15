@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+env/
+venv/
+.python-version
+uv.lock
+
+# IDEs
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db

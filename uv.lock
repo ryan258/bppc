@@ -1,0 +1,35 @@
+version = 1
+revision = 1
+requires-python = ">=3.10"
+
+[[package]]
+name = "bppc"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "renpy" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "renpy", specifier = ">=0.9.7" }]
+
+[[package]]
+name = "pyfiglet"
+version = "1.0.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/94/49/2554c0b7fef12c0b9633352bbd8751cc616f8e8880e0ebab7732c1535564/pyfiglet-1.0.3.tar.gz", hash = "sha256:bad3b55d2eccb30d4693ccfd94573c2a3477dd75f86a0e5465cea51bdbfe2875", size = 833445 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/51/1d/f2cb03dd71a4dba891f808333fa505a6ed2762a8514d8ead7e423fa77e1b/pyfiglet-1.0.3-py3-none-any.whl", hash = "sha256:671bd101ca6a08dc2d94c6a2cda75a862c5e162b980af47d0ba4023837e36489", size = 1087203 },
+]
+
+[[package]]
+name = "renpy"
+version = "0.9.7"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyfiglet" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b4/15/c4b8e90aff4c716a2bff238b4ccd074fe6daddd15b51af5419a3d439ed2c/renpy-0.9.7.tar.gz", hash = "sha256:d68a4ebeaebeeb059ee3040b1106b0dcd2f15e7980487b6a92915a7cac244f8d", size = 6161 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ba/6d/b626df269f573b4e8c98887b917dfae72901b8a1dd80ae47cb0f33a7ea22/renpy-0.9.7-py3-none-any.whl", hash = "sha256:db6aea2d2c08502441a196f44a7bac84992b5c426c0ed7a36a4ec2baa898fc5c", size = 6700 },
+]
