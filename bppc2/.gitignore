@@ -1,4 +1,49 @@
-# Python
+# Blue Pencil Poetry Club - Comprehensive Git Ignore
+# Enhanced for Ren'Py visual novel development
+
+# =============================================================================
+# Ren'Py Specific Files (CRITICAL)
+# =============================================================================
+
+# Compiled bytecode
+*.rpyc
+*.rpymc
+game/cache/
+game/saves/
+
+# Ren'Py build outputs
+*.rpa
+*.rpe
+/BPPC-dists/
+*-dists/
+build/
+dist/
+
+# Ren'Py temporary and cache files
+game/bytecode.rpyb
+game/cache/bytecode-*.rpyb
+game/cache/build_info.json
+game/cache/build_time.txt
+
+# Save data and persistent storage
+persistent
+*.save
+
+# Ren'Py log files
+log.txt
+errors.txt
+traceback.txt
+image_cache.txt
+text_overflow.txt
+dialogue.txt
+dialogue.tab
+profile_screen.txt
+files.txt
+memory.txt
+
+# =============================================================================
+# Python Environment
+# =============================================================================
 __pycache__/
 *.pyc
 *.pyo
@@ -10,9 +55,150 @@ venv/
 .python-version
 uv.lock
 
-# IDEs
-.vscode/
+# =============================================================================
+# Development Environment
+# =============================================================================
 
-# OS generated files
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*~
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.backup
+*.old
+*.orig
+
+# =============================================================================
+# Operating System Files
+# =============================================================================
+
+# Windows
 .DS_Store
 Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE_BIN/
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Linux
+.fuse_hidden*
+.directory
+.Trash-*
+
+# =============================================================================
+# Asset Development (IMPORTANT FOR THIS PROJECT)
+# =============================================================================
+
+# Raw asset sources (keep in separate asset repo)
+/assets_source/
+/raw_assets/
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xcf
+
+# Uncompressed audio (keep sources separate)
+*.wav
+*.flac
+*.aiff
+
+# Audio editing projects
+*.reaper
+*.ptx
+*.als
+
+# Asset staging
+/staging/
+/incoming/
+*_temp.*
+*_test.*
+
+# =============================================================================
+# Security & Privacy
+# =============================================================================
+
+# Never commit secrets or player data
+*.key
+*.token
+*.secret
+credentials.json
+real_player_data.json
+actual_saves/
+
+# =============================================================================
+# Build & Distribution
+# =============================================================================
+
+# Packaging
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Release builds
+/release/
+/final/
+/ship/
+
+# =============================================================================
+# Testing & QA
+# =============================================================================
+
+# Test outputs
+/test_results/
+/qa_reports/
+*.test.log
+
+# =============================================================================
+# Force Include Important Files
+# =============================================================================
+
+# Essential documentation
+!README.md
+!LICENSE
+!roadmap.md
+!fixes.md
+!assets.md
+!generation_prompts.md
+!test_report.md
+
+# Essential game files
+!game/script.rpy
+!game/options.rpy
+!game/gui.rpy
+!game/screens.rpy
+!game/*.rpy
+
+# Keep directory structure
+!game/images/.gitkeep
+!game/audio/.gitkeep
+!game/fonts/.gitkeep
+
+# =============================================================================
+# Notes for Blue Pencil Poetry Club
+# =============================================================================
+
+# This .gitignore is specifically designed for:
+# - Ren'Py 8.4.1+ development
+# - Visual novel asset pipeline
+# - Multi-platform builds (Win/Mac/Linux)
+# - Professional development workflow
+# - Security best practices for game development
+
+# IMPORTANT: Never commit actual generated assets to this repo
+# Keep raw assets and sources in a separate private repository
+# Only commit the .rpy code files and documentation
