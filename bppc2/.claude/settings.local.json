@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(renpy.exe:*)",
+      "Bash(python:*)",
+      "Bash(rm:*)",
+      "Bash(where renpy)"
+    ],
+    "deny": []
+  }
+}
