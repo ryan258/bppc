@@ -5,10 +5,8 @@ While running game code:
     call act1_welcome
   File "game/script.rpy", line 138, in script call
     call poetry_session_1
-  File "game/script.rpy", line 213, in script call
-    call after_club_conversations
-  File "game/script.rpy", line 237, in script
-    "Next Tuesday can't come soon enough."
+  File "game/script.rpy", line 162, in script
+    kit "Just say what you mean, mean what you say."
 FileNotFoundError: Couldn't find file 'gui/window_icon.png'.
 
 -- Full Traceback ------------------------------------------------------------
@@ -18,10 +16,8 @@ Traceback (most recent call last):
     call act1_welcome
   File "game/script.rpy", line 138, in script call
     call poetry_session_1
-  File "game/script.rpy", line 213, in script call
-    call after_club_conversations
-  File "game/script.rpy", line 237, in script
-    "Next Tuesday can't come soon enough."
+  File "game/script.rpy", line 162, in script
+    kit "Just say what you mean, mean what you say."
   File "renpy/ast.py", line 2915, in execute
     Say.execute(self)
     ~~~~~~~~~~~^^^^^^
@@ -62,4 +58,4 @@ FileNotFoundError: Couldn't find file 'gui/window_icon.png'.
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.1.25072401
 Blue Pencil Poetry Club 1.0.0
-Fri Aug 15 13:11:29 2025
+Fri Aug 15 15:27:31 2025

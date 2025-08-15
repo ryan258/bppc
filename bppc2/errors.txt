@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 79: 'alpha' is not a keyword argument or valid child of the text statement.
-    alpha 0.3
-         ^
+File "game/transforms.rpy", line 19: end of line expected.
+    transform stage_left:   xalign 0.20 yalign 1.0
+                            ^
+
+File "game/transforms.rpy", line 20: end of line expected.
+    transform stage_center: xalign 0.50 yalign 1.0
+                            ^
+
+File "game/transforms.rpy", line 21: end of line expected.
+    transform stage_right:  xalign 0.80 yalign 1.0
+                            ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Fri Aug 15 12:39:46 2025
+Fri Aug 15 15:21:49 2025
