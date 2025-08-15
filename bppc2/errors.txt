@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/honest_mode.rpy", line 48: expected a keyword argument or child statement.
-    ""
-    ^
+File "game/audio_system.rpy", line 117: expected end of line
+    play ambient diner_loop loop volume (ambient_volume * 1.5) pitch 0.8
+                                                               ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Thu Aug 14 23:32:05 2025
+Fri Aug 15 11:58:10 2025

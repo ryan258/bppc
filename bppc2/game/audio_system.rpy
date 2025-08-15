@@ -1,10 +1,11 @@
 # Blue Pencil Audio System - Authentic 1960s Soundscape
 # Diner ambience, pencil scratch, mercy effects
 
-# Audio channel definitions
-define audio.ambient = "ambient"
-define audio.sfx = "sfx" 
-define audio.hub_voice = "voice"
+# Audio channel definitions  
+init python:
+    renpy.music.register_channel("ambient", "sfx", loop=True)
+    renpy.music.register_channel("sfx", "sfx", loop=False) 
+    renpy.music.register_channel("hub_voice", "sfx", loop=True)
 
 # Audio file definitions (using existing files in game/audio/)
 define audio.diner_loop = "audio/diner_loop.ogg"
@@ -114,7 +115,7 @@ label maze_audio:
         stop sfx
         
         # Distorted, uncomfortable ambience
-        play ambient diner_loop loop volume (ambient_volume * 1.5) pitch 0.8
+        play ambient diner_loop loop volume (ambient_volume * 1.5)
         call play_hub_ambience
         
         $ renpy.notify("[dissonant atmosphere]")

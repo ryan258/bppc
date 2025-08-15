@@ -16,6 +16,19 @@ define kit = Character("Kit", color="#800080")    # Darker purple for spiky pers
 define mara = Character("Mara", color="#B8860B")  # Darker gold for self-aware treasurer
 define hub = Character("", color="#2B68C5")       # The editorial voice (blue pencil)
 
+# Placeholder character images (silhouettes until assets are created)
+image june neutral = Solid("#FFB6C1", xsize=200, ysize=600)
+image june happy = Solid("#FFB6C1", xsize=200, ysize=600)
+image june worried = Solid("#FFB6C1", xsize=200, ysize=600)
+image mina neutral = Solid("#2B68C5", xsize=200, ysize=600)
+image mina intense = Solid("#2B68C5", xsize=200, ysize=600)
+image kit neutral = Solid("#800080", xsize=200, ysize=600)
+image kit skeptical = Solid("#800080", xsize=200, ysize=600)
+image kit angry = Solid("#800080", xsize=200, ysize=600)
+image mara neutral = Solid("#B8860B", xsize=200, ysize=600)
+image mara knowing = Solid("#B8860B", xsize=200, ysize=600)
+image mara worried = Solid("#B8860B", xsize=200, ysize=600)
+
 # Narrator for scene descriptions
 define n = Character(None, kind=nvl)
 
