@@ -305,6 +305,40 @@ label phase_three_escalation:
     "But for now, the poetry club continues."
     "Even as the walls of reality grow thin."
     
+    # Check for Centerfold trigger conditions
+    call check_centerfold_trigger
+    
+    return
+
+# Centerfold trigger - the climax of the meta-horror
+label check_centerfold_trigger:
+    # Trigger after sufficient pressure and interaction
+    if (hub_pressure >= 60 and 
+        (reload_count >= 3 or editorial_pressure >= 20) and
+        not mercy_achieved):
+        
+        "Something is different today."
+        "The air feels charged with possibility."
+        "As if the story itself is holding its breath."
+        
+        call centerfold_sequence
+        call check_mercy_conditions
+    
+    elif hub_pressure >= 80:
+        # Alternative trigger for high pressure
+        "The editorial pressure has become unbearable."
+        "Something has to give."
+        
+        call centerfold_sequence
+        call check_mercy_conditions
+    
+    else:
+        # Continue normal flow
+        "The poetry club session ends normally."
+        "But you sense something building."
+        "A choice approaching."
+        "A moment that will define everything."
+    
     return
 
 label talk_june_history:

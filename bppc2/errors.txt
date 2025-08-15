@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/fake_traceback.rpy", line 43: expected a keyword argument or child statement.
+File "game/honest_mode.rpy", line 48: expected a keyword argument or child statement.
     ""
     ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Thu Aug 14 23:26:00 2025
+Thu Aug 14 23:32:05 2025
